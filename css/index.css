@@ -1,0 +1,31 @@
+* {
+    user-select: none;
+}
+body {
+    margin: 0;
+}
+
+button {
+    position: absolute;
+    top: 501px;
+    height: 40px;
+    width: 40px;
+}
+
+#up_btn {
+    left: 199px;
+}
+
+#right_btn {
+    left: 240px;
+    top: 523px;
+}
+
+#left_btn {
+    left: 158px;
+    top: 523px;
+}
+
+#restart_btn {
+    width: 100px;
+}
