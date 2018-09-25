@@ -21,8 +21,7 @@ var player;
 var score = 0;
 var scoreText;
 
-function preload ()
-{
+function preload () {
     this.load.image('sky', 'assets/sky.png');
     this.load.image('ground', 'assets/platform.png');
     this.load.image('star', 'assets/star.png');
@@ -33,8 +32,7 @@ function preload ()
     );
 }
 
-function create ()
-{
+function create () {
 
     this.add.image(400, 300, 'sky');
     scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
@@ -102,49 +100,42 @@ function create ()
 var right = document.getElementById('right_btn');
 
 right.ontouchstart = startTouchRight;
-function startTouchRight()
-{
+function startTouchRight() {
    cursors.right.isDown = true;
 }
 
 right.ontouchend  = CancelTouchRight;
-function CancelTouchRight()
-{
+function CancelTouchRight() {
   cursors.right.isDown = false;
 }
 
 var up = document.getElementById('up_btn');
 
 up.ontouchstart = startTouchUp;
-function startTouchUp()
-{
+function startTouchUp() {
    cursors.up.isDown = true;
 }
 
 up.ontouchend  = cancelTouchUp;
-function cancelTouchUp()
-{
+function cancelTouchUp() {
   cursors.up.isDown = false;
 }
 
 var left = document.getElementById('left_btn');
 
 left.ontouchstart = startTouchLeft;
-function startTouchLeft()
-{
+function startTouchLeft() {
    cursors.left.isDown = true;
 }
 
 left.ontouchend  = cancelTouchLeft;
-function cancelTouchLeft()
-{
+function cancelTouchLeft() {
   cursors.left.isDown = false;
 }
 
 
 
-function update ()
-{
+function update () {
     if (cursors.left.isDown)
     {
         player.setVelocityX(-160);
@@ -170,8 +161,7 @@ function update ()
     }
 }
 
-function collectStar (player, star)
-{
+function collectStar (player, star) {
     star.disableBody(true, true);
     score += 10;
     scoreText.setText('Score: ' + score);
@@ -194,8 +184,7 @@ function collectStar (player, star)
     }
 }
 
-function hitBomb (player, bomb)
-{
+function hitBomb (player, bomb) {
     this.physics.pause();
 
     player.setTint(0xff0000);
@@ -206,7 +195,6 @@ function hitBomb (player, bomb)
 }
 
 var restart = document.getElementById('restart_btn');
-restart.onclick = function()
-{
+restart.onclick = function() {
     window.location.reload();
 }
